@@ -1,0 +1,1 @@
+# lotto-and-eurojackpot-gen
