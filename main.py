@@ -15,9 +15,11 @@ def play_lotto(root):
                     kupon = set()
                     while len(kupon) < 6:
                         liczba = random.randint(1, 49)
-                        kupon.add(str(liczba))
+                        kupon.add(liczba)
 
-                    end = ", ".join(kupon)
+                    kupon2 = sorted(kupon)
+                    end = ", ".join(str(x) for x in kupon2)
+
                     wynik.config(state="normal")
 
                     wynik.insert(END, f"Kupon {i + 1}.    {end} \n")
@@ -74,14 +76,16 @@ def play_euro(root):
                     kupon = set()
                     while len(kupon) < 5:
                         liczba = random.randint(1, 50)
-                        kupon.add(str(liczba))
+                        kupon.add(liczba)
                     while len(dodatek) < 2:
                         liczba2 = random.randint(1, 10)
-                        dodatek.add(str(liczba2))
+                        dodatek.add(liczba2)
 
-                    end = ", ".join(sorted(kupon))
+                    kupon2 = sorted(kupon)
+                    end = ", ".join(str(z) for z in kupon2)
 
-                    end2 = ", ".join(sorted(dodatek))
+                    dodatek2 = sorted(dodatek)
+                    end2 = ", ".join(str(y) for y in dodatek2)
                     wynik.config(state="normal")
 
                     wynik.insert(END, f"Kupon {i + 1}.    {end} | {end2} \n")
